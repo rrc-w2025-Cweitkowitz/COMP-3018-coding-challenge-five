@@ -4,11 +4,17 @@ import {
     errorLogger,
     consoleLogger,
 } from "./api/v1/middleware/logger";
+
+import { getHelmetConfig } from "./config/helmetConfig";
+import { corsConfig } from "./config/corsConfig";
 import errorHandler from "./api/v1/middleware/errorHandler";
 import resourceRouter from "./api/v1/routes/resourceRoutes";
 
 const app: Express = express();
 
+app.use(getHelmetConfig());
+
+app.use(corsConfig)
 // Logging middleware
 if (process.env.NODE_ENV === "production") {
     app.use(accessLogger);
