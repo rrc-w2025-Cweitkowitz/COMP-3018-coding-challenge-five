@@ -1,5 +1,5 @@
-import { getAllRessources, getRessourcesById } from "../services/resourceService";
-import { Resources } from "../models/resourceModels";
+import { getAllRessources, getRessourcesById } from "../src/api/v1/services/resourceService";
+import { Resources } from "../src/api/v1/models/resourceModels";
 
 describe("Resource Service", () => {
   describe("getAllRessources", () => {
