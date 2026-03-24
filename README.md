@@ -15,3 +15,4 @@ After cloning this repository, you need to install the necessary npm modules tha
 - npm install -D @redocly/cli
 
 To complete the firestore database setup, you need to add the firestore service account information in the '.env' file, and then update the 'firebaseConfig.ts' script.
+   
