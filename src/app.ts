@@ -1,4 +1,5 @@
 import express, { Express } from "express";
+import setupSwagger from "./config/swagger";
 import {
     accessLogger,
     errorLogger,
@@ -22,6 +23,7 @@ if (process.env.NODE_ENV === "production") {
 } else {
     app.use(consoleLogger);
 }
+setupSwagger(app);
 
 // JSON middleware
 app.use(express.json());

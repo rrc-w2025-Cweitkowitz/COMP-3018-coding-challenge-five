@@ -1,7 +1,7 @@
 /**
  * @openapi
  * components:
- *  schema:
+ *  schemas:
  *      ItemResourceModel:
  *          type: object
  *          required:
@@ -22,7 +22,7 @@
  *                  example: "Typescript Basics"
  *              type:
  *                  type: string
- *                  description: Resource type (ie: video, document)
+ *                  description: Resource type
  *                  example: "video"
  *              url:
  *                  type: string
