@@ -4,13 +4,12 @@ import { getResources, getResourceById } from "../controllers/resourceController
 const router = Router();
 
 /**
- * @openapi
- * /api/v1/resources:
- *   get:
- *     summary: Get all resources
- *     description: Retrieves a list of all educational resources
- *     responses:
- *       200:
+ *  @openapi
+ *  /resources:
+ *      get:
+ *          summary: Retrieves a list of all educational resources
+ *          responses:
+ *              200:
  *         description: Resources retrieved successfully
  *         content:
  *           application/json:
