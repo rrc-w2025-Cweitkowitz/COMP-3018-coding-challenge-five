@@ -5,11 +5,11 @@ import {
     consoleLogger,
 } from "./api/v1/middleware/logger";
 import errorHandler from "./api/v1/middleware/errorHandler";
-
-/** import the routes **/
+import resourceRouter from "./api/v1/routes/resourceRoutes";
 
 const app: Express = express();
 
+// Logging middleware
 if (process.env.NODE_ENV === "production") {
     app.use(accessLogger);
     app.use(errorLogger);
@@ -17,9 +17,10 @@ if (process.env.NODE_ENV === "production") {
     app.use(consoleLogger);
 }
 
+// JSON middleware
 app.use(express.json());
 
-
+// Health check route
 app.get("/api/v1/health", (req, res) => {
     res.json({
         status: "OK",
@@ -29,11 +30,10 @@ app.get("/api/v1/health", (req, res) => {
     });
 });
 
-/** Update the api endppoints with appropriate routes **/
+// Mount resources router correctly
+app.use("/api/v1/resources", resourceRouter);
 
-
-
-
+// Error handler
 app.use(errorHandler);
 
 export default app;
